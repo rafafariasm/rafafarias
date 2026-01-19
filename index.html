@@ -48,87 +48,9 @@
             <a href="#discografia" class="btn-gold">Ouvir Agora</a>
         </div>
     </section>
-    ```
 
-### 2. Alterações no `style.css`
 
-Precisamos alterar a forma como a seção `.hero` funciona. Ela deixará de ter uma imagem de fundo fixa e passará a ser apenas um container para os elementos posicionados absolutamente dentro dela.
 
-**Substitua** o bloco `/* HERO SECTION */` inteiro no seu CSS pelo novo código abaixo:
-
-```css
-/* ============================
-   NOVA HERO SECTION (Carrossel)
-============================ */
-.hero {
-    height: 90vh;
-    position: relative; /* Essencial para posicionar os filhos */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    overflow: hidden; /* Garante que nada vaze da área do banner */
-}
-
-/* Container que segura as imagens */
-.hero-carousel {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1; /* Fica na camada mais baixa */
-}
-
-/* Estilo de cada slide individual */
-.carousel-slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    opacity: 0; /* Slides começam invisíveis */
-    /* Transição suave de 1.5 segundos para a opacidade */
-    transition: opacity 1.5s ease-in-out; 
-}
-
-/* Classe que o Javascript adiciona para tornar o slide visível */
-.carousel-slide.active {
-    opacity: 1;
-}
-
-/* Camada escura estática */
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7); /* Preto com 70% de transparência */
-    z-index: 2; /* Fica acima das imagens */
-}
-
-/* O conteúdo de texto (H1, P, Botão) */
-.hero-content {
-    position: relative;
-    z-index: 3; /* Fica na camada mais alta, acima de tudo */
-}
-
-/* Mantemos os estilos de texto antigos */
-.hero h1 {
-    font-size: 3.5rem;
-    margin-bottom: 10px;
-    font-weight: 700;
-    letter-spacing: 3px;
-}
-
-.hero p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-    color: #ccc;
-}
 
     <section id="portfolio" class="container bg-darker">
         <h2 class="section-title">Mixagem & Masterização</h2>
